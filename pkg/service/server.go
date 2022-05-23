@@ -13,7 +13,7 @@ type server struct {
 
 func (s *server) RandomText(ctx context.Context, in *everphone.EverphoneRandomTextInput) (*everphone.EverphoneRandomTextOutput, error) {
 	return &everphone.EverphoneRandomTextOutput{
-		Text: fmt.Sprintf("Randome text: %s", in.Text),
+		Text: fmt.Sprintf("Random text: %s", in.Text),
 	}, nil
 }
 
