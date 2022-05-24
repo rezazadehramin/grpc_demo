@@ -21,11 +21,11 @@ func main() {
 	fmt.Println("Press ctrl+c to exit :D")
 
 	for true {
-		message := &everphone.EverphoneRandomTextInput{
-			Text: util.RandStringRunes(10),
-		}
+		ctx := context.Background()
 
-		output, err := client.RandomText(context.Background(), message)
+		output, err := client.RandomText(ctx, &everphone.EverphoneRandomTextInput{
+			Text: util.RandStringRunes(10),
+		})
 		if err != nil {
 			panic(err)
 		}
