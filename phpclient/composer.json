@@ -1,0 +1,14 @@
+{
+  "name": "grpc-demo/phpclient",
+  "type": "project",
+  "require": {
+    "google/protobuf": "3.15",
+    "grpc/grpc": "1.36",
+    "ext-grpc": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "../protos"
+    }
+  }
+}

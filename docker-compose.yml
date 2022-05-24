@@ -1,0 +1,12 @@
+version: '3.2'
+services:
+  phpclient:
+    image: grpc-demo/phpclient
+    tty: true
+    build:
+      context: phpclient
+      dockerfile: Dockerfile
+    working_dir: /root/app/
+    volumes:
+      - "./protos:/root/app/protos:cached"
+      - "./phpclient:/root/app/src:cached"
