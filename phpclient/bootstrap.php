@@ -6,14 +6,17 @@ use EverphoneDemo\EverphoneRandomTextInput;
 require_once realpath("vendor/autoload.php");
 
 $client = new EverphoneClient(
-    "localhost:8080",
+    "goserver:8080",
     [
         "credentials" => Grpc\ChannelCredentials::createInsecure()
     ]
 );
 
-$call = $client->RandomText((new EverphoneRandomTextInput())->setText(bin2hex(random_bytes(10))));
-list($res, $status) = $call->wait();
+while (true) {
+    $value = bin2hex(random_bytes(10));
+    $call = $client->RandomText((new EverphoneRandomTextInput())->setText($value));
+    list($reply, $status) = $call->wait();
 
-var_dump($res);
-var_dump($status);
+    echo $reply->getText() . "\n";
+    sleep(3);
+}

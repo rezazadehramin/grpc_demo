@@ -35,11 +35,3 @@ ENV PATH "/grpc/cmake/build/third_party/protobuf:${PATH}"
 
 # Moving client folder to vm
 WORKDIR root/app/
-#COPY ./Makefile .
-#COPY ../Makefile .
-
-# Packages
-#RUN composer install
-
-# Start the client app
-#ENTRYPOINT  [ "make", "proto" ]
