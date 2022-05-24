@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
-	"demo_grpc/pkg/util"
-	"demo_grpc/protos/everphone"
+	"demo_grpc_client/pkg/util"
+	"demo_grpc_client/protos/everphone"
 	"fmt"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

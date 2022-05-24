@@ -10,3 +10,22 @@ services:
     volumes:
       - "./protos:/root/app/protos:cached"
       - "./phpclient:/root/app/src:cached"
+  goclient:
+    image: grpc-demo/goclient
+    tty: true
+    build:
+      context: goclient
+      dockerfile: Dockerfile
+    working_dir: /root/app/
+    volumes:
+      - "./goclient:/root/app/src"
+  goserver:
+    image: grpc-demo/goserver
+    tty: true
+    build:
+      context: goclient
+      dockerfile: Dockerfile
+    working_dir: /root/app/
+    volumes:
+      - "./goserver:/root/app/src"
+    ports: [ '127.0.0.1:8080:8080' ]

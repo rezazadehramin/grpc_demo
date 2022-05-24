@@ -1,7 +1,7 @@
 package main
 
 import (
-	"demo_grpc/pkg/service"
+	"demo_grpc_server/pkg/service"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"log"

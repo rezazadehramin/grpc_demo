@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = "./everphone";
+option php_namespace="EverphoneDemo";
+option php_metadata_namespace="EverphoneDemo\\Meta";
+
+service Everphone {
+  rpc RandomText(EverphoneRandomTextInput) returns (EverphoneRandomTextOutput);
+}
+
+message EverphoneRandomTextInput {
+  string Text = 1;
+}
+
+message EverphoneRandomTextOutput {
+  string Text = 1;
+}
